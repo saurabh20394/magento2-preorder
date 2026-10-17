@@ -1,13 +1,13 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Controller\Adminhtml\Product;
+namespace Saurabhg\Preorder\Controller\Adminhtml\Product;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -15,14 +15,14 @@ use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Ui\Component\MassAction\Filter;
-use Saurabh\Preorder\Model\ReleaseNotification\Sender;
+use Saurabhg\Preorder\Model\ReleaseNotification\Sender;
 
 /**
  * Catalog > Products > Actions > Send Pre-Order Release Notification
  */
 class MassNotify extends Action implements HttpPostActionInterface
 {
-    public const ADMIN_RESOURCE = 'Saurabh_Preorder::release_notification';
+    public const ADMIN_RESOURCE = 'Saurabhg_Preorder::release_notification';
 
     /**
      * @param Context $context

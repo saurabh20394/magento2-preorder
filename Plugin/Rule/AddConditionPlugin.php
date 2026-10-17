@@ -1,17 +1,17 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Plugin\Rule;
+namespace Saurabhg\Preorder\Plugin\Rule;
 
 use Magento\CatalogRule\Model\Rule\Condition\Combine as CatalogCombine;
-use Saurabh\Preorder\Model\Rule\Condition\CatalogPreorder;
-use Saurabh\Preorder\Model\Rule\Condition\SalesPreorder;
+use Saurabhg\Preorder\Model\Rule\Condition\CatalogPreorder;
+use Saurabhg\Preorder\Model\Rule\Condition\SalesPreorder;
 
 /**
  * Adds "Pre-Order (Saurabh Pre-Order)" to the "Add condition" dropdown of catalog and cart price rules

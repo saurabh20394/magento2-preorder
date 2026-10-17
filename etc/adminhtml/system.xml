@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
@@ -16,7 +16,7 @@
         <section id="saurabh_preorder" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Pre Order</label>
             <tab>saurabh</tab>
-            <resource>Saurabh_Preorder::config</resource>
+            <resource>Saurabhg_Preorder::config</resource>
 
             <group id="general" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
@@ -43,13 +43,13 @@
                 <field id="pending_statuses" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Pending Orders Statuses (Analytics)</label>
                     <comment>Orders in these statuses are counted as pending pre-orders on the Pre Order Analytics page.</comment>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\OrderStatus</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\OrderStatus</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
                 <field id="revenue_statuses" translate="label comment" type="multiselect" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Revenue Orders Statuses (Analytics)</label>
                     <comment>Orders in these statuses are counted as revenue on the Pre Order Analytics page.</comment>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\OrderStatus</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\OrderStatus</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
             </group>
@@ -100,23 +100,23 @@
                 </field>
                 <field id="attribute" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Release Date Attribute</label>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\DateAttribute</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\DateAttribute</source_model>
                     <depends><field id="enabled">1</field></depends>
                 </field>
                 <field id="format" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Release Date Format</label>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\DateFormat</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\DateFormat</source_model>
                     <depends><field id="enabled">1</field></depends>
                 </field>
                 <field id="change_backorders" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Change Product Backorders Value on Release Date</label>
                     <comment>Processed daily by cron for products whose release date has come.</comment>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\ReleaseBackorders</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\ReleaseBackorders</source_model>
                     <depends><field id="enabled">1</field></depends>
                 </field>
                 <field id="note_state" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Pre-Order Note State on Release Date</label>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\NoteState</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\NoteState</source_model>
                     <depends><field id="enabled">1</field></depends>
                 </field>
             </group>
@@ -139,7 +139,7 @@
                 <field id="order_statuses" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Order Status</label>
                     <comment>Notifications are sent only for orders in the chosen statuses. Send them from Catalog &gt; Products &gt; Actions &gt; Send Pre-Order Release Notification.</comment>
-                    <source_model>Saurabh\Preorder\Model\Config\Source\OrderStatus</source_model>
+                    <source_model>Saurabhg\Preorder\Model\Config\Source\OrderStatus</source_model>
                     <can_be_empty>1</can_be_empty>
                 </field>
                 <field id="template" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">

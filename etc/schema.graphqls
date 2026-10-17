@@ -1,4 +1,4 @@
-# Saurabh_Preorder - read-only GraphQL support
+# Saurabhg_Preorder - read-only GraphQL support
 #
 # Copyright (C) 2026 Saurabh Gupta
 # License: GPL-3.0-or-later
@@ -11,13 +11,13 @@ type SaurabhPreorderInfo @doc(description: "Pre-order information.") {
 }
 
 interface ProductInterface {
-    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information of the product.") @resolver(class: "Saurabh\\Preorder\\Model\\Resolver\\ProductPreorder")
+    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information of the product.") @resolver(class: "Saurabhg\\Preorder\\Model\\Resolver\\ProductPreorder")
 }
 
 interface CartItemInterface {
-    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information of the cart item.") @resolver(class: "Saurabh\\Preorder\\Model\\Resolver\\CartItemPreorder")
+    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information of the cart item.") @resolver(class: "Saurabhg\\Preorder\\Model\\Resolver\\CartItemPreorder")
 }
 
 interface OrderItemInterface {
-    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information saved with the order item.") @resolver(class: "Saurabh\\Preorder\\Model\\Resolver\\OrderItemPreorder")
+    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information saved with the order item.") @resolver(class: "Saurabhg\\Preorder\\Model\\Resolver\\OrderItemPreorder")
 }

@@ -1,18 +1,18 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Setup\Patch\Data;
+namespace Saurabhg\Preorder\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Sales\Model\Order;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 class AddPreorderOrderStatuses implements DataPatchInterface
 {

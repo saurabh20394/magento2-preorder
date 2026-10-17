@@ -1,13 +1,13 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Model\ReleaseNotification;
+namespace Saurabhg\Preorder\Model\ReleaseNotification;
 
 use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory as ProductCollectionFactory;
@@ -17,8 +17,8 @@ use Magento\Framework\Mail\Template\TransportBuilder;
 use Magento\Framework\Translate\Inline\StateInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
 use Psr\Log\LoggerInterface;
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\StockProvider;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\StockProvider;
 
 /**
  * Emails customers who pre-ordered the given products that the products are released
@@ -81,7 +81,7 @@ class Sender
                 $result['sent']++;
             } catch (\Throwable $e) {
                 $result['failed']++;
-                $this->logger->error('Saurabh_Preorder release notification: ' . $e->getMessage());
+                $this->logger->error('Saurabhg_Preorder release notification: ' . $e->getMessage());
             }
         }
 

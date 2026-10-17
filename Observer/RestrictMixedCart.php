@@ -1,20 +1,20 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Observer;
+namespace Saurabhg\Preorder\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Quote\Model\Quote\Item;
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\PreorderResolver;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\PreorderResolver;
 
 /**
  * "Allow Mixed Carts" = No: regular and pre-order products can't be in the same cart

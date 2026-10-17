@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
@@ -11,8 +11,8 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="order_additional_info">
-            <block class="Saurabh\Preorder\Block\Order\Warning" name="saurabh.preorder.order.warning"
-                   template="Saurabh_Preorder::order/warning.phtml"/>
+            <block class="Saurabhg\Preorder\Block\Order\Warning" name="saurabh.preorder.order.warning"
+                   template="Saurabhg_Preorder::order/warning.phtml"/>
         </referenceContainer>
     </body>
 </page>

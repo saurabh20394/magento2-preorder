@@ -1,17 +1,17 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Plugin\CatalogInventory;
+namespace Saurabhg\Preorder\Plugin\CatalogInventory;
 
 use Magento\CatalogInventory\Api\Data\StockItemInterface;
 use Magento\CatalogInventory\Model\Spi\StockStateProviderInterface;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 /**
  * Legacy (non-MSI) stock check: treat "Allow Pre-Orders" like "Allow Qty Below 0".

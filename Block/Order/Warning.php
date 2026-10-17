@@ -1,19 +1,19 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Block\Order;
+namespace Saurabhg\Preorder\Block\Order;
 
 use Magento\Framework\Registry;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Sales\Model\Order;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 /**
  * "Pre-Order Warning in Order" (customer account order view and admin order view)
@@ -23,7 +23,7 @@ class Warning extends Template
     /**
      * @var string
      */
-    protected $_template = 'Saurabh_Preorder::order/warning.phtml';
+    protected $_template = 'Saurabhg_Preorder::order/warning.phtml';
 
     /**
      * @param Context $context

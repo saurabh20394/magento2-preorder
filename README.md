@@ -1,11 +1,11 @@
-# Saurabh_Preorder
+# Saurabhg_Preorder
 
 Pre-order / backorder for out-of-stock and upcoming products for Magento 2.4 (Luma and Hyvä).
 
 ## Installation
 
 ```bash
-bin/magento module:enable Saurabh_Preorder
+bin/magento module:enable Saurabhg_Preorder
 bin/magento setup:upgrade
 bin/magento setup:di:compile          # production mode only
 bin/magento setup:static-content:deploy   # production mode only

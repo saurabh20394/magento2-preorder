@@ -1,13 +1,13 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Setup\Patch\Data;
+namespace Saurabhg\Preorder\Setup\Patch\Data;
 
 use Magento\Catalog\Model\Product;
 use Magento\Eav\Model\Entity\Attribute\Backend\Datetime;
@@ -16,7 +16,7 @@ use Magento\Eav\Setup\EavSetupFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 class AddPreorderProductAttributes implements DataPatchInterface, PatchRevertableInterface
 {

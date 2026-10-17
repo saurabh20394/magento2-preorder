@@ -1,19 +1,19 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Model\Rule\Condition;
+namespace Saurabhg\Preorder\Model\Rule\Condition;
 
 use Magento\Catalog\Model\Product;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\Model\AbstractModel;
 use Magento\Quote\Model\Quote\Item\AbstractItem;
-use Saurabh\Preorder\Model\PreorderResolver;
+use Saurabhg\Preorder\Model\PreorderResolver;
 
 /**
  * "Pre-Order (Saurabh Pre-Order) is Yes/No" condition for catalog and cart price rules

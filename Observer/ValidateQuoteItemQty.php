@@ -1,19 +1,19 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Observer;
+namespace Saurabhg\Preorder\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Quote\Model\Quote\Item;
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\PreorderResolver;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\PreorderResolver;
 
 /**
  * Cart warnings: "Pre-Order Warning in Shopping Cart" and "Pre-Order Warning for Below Zero Qty" (blocks checkout)

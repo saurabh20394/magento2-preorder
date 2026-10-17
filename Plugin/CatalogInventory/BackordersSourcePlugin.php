@@ -1,16 +1,16 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Plugin\CatalogInventory;
+namespace Saurabhg\Preorder\Plugin\CatalogInventory;
 
 use Magento\CatalogInventory\Model\Source\Backorders;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 /**
  * Adds "Allow Pre-Orders" to the Backorders dropdown (product form, mass update, configuration)

@@ -1,13 +1,13 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Block\Product;
+namespace Saurabhg\Preorder\Block\Product;
 
 use Magento\Catalog\Model\Product;
 use Magento\ConfigurableProduct\Model\Product\Type\Configurable;
@@ -15,10 +15,10 @@ use Magento\Framework\Registry;
 use Magento\Framework\Serialize\Serializer\Json;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\GroupedProduct\Model\Product\Type\Grouped;
-use Saurabh\Preorder\Block\AbstractPreorder;
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\NoteRenderer;
-use Saurabh\Preorder\Model\PreorderResolver;
+use Saurabhg\Preorder\Block\AbstractPreorder;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\NoteRenderer;
+use Saurabhg\Preorder\Model\PreorderResolver;
 
 /**
  * Product page: pre-order button text, note and below-zero warning (incl. configurable/grouped components)

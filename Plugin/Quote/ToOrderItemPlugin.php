@@ -1,19 +1,19 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Plugin\Quote;
+namespace Saurabhg\Preorder\Plugin\Quote;
 
 use Magento\Quote\Model\Quote\Item\AbstractItem;
 use Magento\Quote\Model\Quote\Item\ToOrderItem;
 use Magento\Sales\Api\Data\OrderItemInterface;
-use Saurabh\Preorder\Model\NoteRenderer;
-use Saurabh\Preorder\Model\PreorderResolver;
+use Saurabhg\Preorder\Model\NoteRenderer;
+use Saurabhg\Preorder\Model\PreorderResolver;
 
 /**
  * Saves the pre-order flag and the note valid at the time of purchase on the order item

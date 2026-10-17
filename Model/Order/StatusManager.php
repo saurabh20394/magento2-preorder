@@ -1,16 +1,16 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Model\Order;
+namespace Saurabhg\Preorder\Model\Order;
 
 use Magento\Sales\Model\Order;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 /**
  * "Assign Pre-Order Status": pending -> Pre-Order Pending, processing -> Pre-Order Processing and back

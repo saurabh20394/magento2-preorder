@@ -1,5 +1,5 @@
 {
-    "name": "saurabh/module-preorder",
+    "name": "saurabhg/module-preorder",
     "description": "Pre-order / backorder for out-of-stock and upcoming products (Luma + Hyva ready, GraphQL, REST).",
     "type": "magento2-module",
     "license": "GPL-3.0-or-later",
@@ -20,6 +20,6 @@
     },
     "autoload": {
         "files": ["registration.php"],
-        "psr-4": {"Saurabh\\Preorder\\": ""}
+        "psr-4": {"Saurabhg\\Preorder\\": ""}
     }
 }

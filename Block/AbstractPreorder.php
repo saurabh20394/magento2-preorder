@@ -1,22 +1,22 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Block;
+namespace Saurabhg\Preorder\Block;
 
 use Magento\Catalog\Model\Product;
 use Magento\Framework\Serialize\Serializer\Json;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\NoteRenderer;
-use Saurabh\Preorder\Model\PreorderResolver;
-use Saurabh\Preorder\Model\PreorderState;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\NoteRenderer;
+use Saurabhg\Preorder\Model\PreorderResolver;
+use Saurabhg\Preorder\Model\PreorderState;
 
 /**
  * Base for storefront blocks: renders a JSON config read by view/frontend/web/js/preorder.js.
@@ -27,7 +27,7 @@ abstract class AbstractPreorder extends Template
     /**
      * @var string
      */
-    protected $_template = 'Saurabh_Preorder::config.phtml';
+    protected $_template = 'Saurabhg_Preorder::config.phtml';
 
     private ?bool $isHyva = null;
 

@@ -1,17 +1,17 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Block\Product;
+namespace Saurabhg\Preorder\Block\Product;
 
 use Magento\Catalog\Block\Product\ListProduct;
 use Magento\Catalog\Model\Product;
-use Saurabh\Preorder\Block\AbstractPreorder;
+use Saurabhg\Preorder\Block\AbstractPreorder;
 
 /**
  * Category / search result pages: pre-order button text and note per product

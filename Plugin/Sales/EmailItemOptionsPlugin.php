@@ -1,16 +1,16 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Plugin\Sales;
+namespace Saurabhg\Preorder\Plugin\Sales;
 
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\OrderItemOptions;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\OrderItemOptions;
 
 /**
  * "Automatically Add Warning to Transactional Emails": pre-order note on items in sales emails

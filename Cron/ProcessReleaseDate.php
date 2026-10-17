@@ -1,13 +1,13 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Cron;
+namespace Saurabhg\Preorder\Cron;
 
 use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
@@ -17,7 +17,7 @@ use Magento\Framework\Indexer\CacheContext;
 use Magento\Framework\Indexer\CacheContextFactory;
 use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 use Psr\Log\LoggerInterface;
-use Saurabh\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\Config;
 
 /**
  * Daily: products whose release date has come
@@ -94,7 +94,7 @@ class ProcessReleaseDate
             return true;
         } catch (\Throwable $e) {
             $this->logger->error(
-                sprintf('Saurabh_Preorder release date for SKU "%s": %s', $product->getSku(), $e->getMessage())
+                sprintf('Saurabhg_Preorder release date for SKU "%s": %s', $product->getSku(), $e->getMessage())
             );
             return false;
         }

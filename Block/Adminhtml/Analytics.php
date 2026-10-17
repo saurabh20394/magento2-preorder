@@ -1,20 +1,20 @@
 <?php
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
  */
 declare(strict_types=1);
 
-namespace Saurabh\Preorder\Block\Adminhtml;
+namespace Saurabhg\Preorder\Block\Adminhtml;
 
 use Magento\Backend\Block\Template;
 use Magento\Backend\Block\Template\Context;
 use Magento\Directory\Model\Currency;
 use Magento\Sales\Model\ResourceModel\Order\Status\CollectionFactory as StatusCollectionFactory;
-use Saurabh\Preorder\Model\Config;
-use Saurabh\Preorder\Model\ResourceModel\Analytics as AnalyticsResource;
+use Saurabhg\Preorder\Model\Config;
+use Saurabhg\Preorder\Model\ResourceModel\Analytics as AnalyticsResource;
 
 /**
  * Reports > Pre Order Analytics
@@ -24,7 +24,7 @@ class Analytics extends Template
     /**
      * @var string
      */
-    protected $_template = 'Saurabh_Preorder::analytics.phtml';
+    protected $_template = 'Saurabhg_Preorder::analytics.phtml';
 
     private ?array $period = null;
 

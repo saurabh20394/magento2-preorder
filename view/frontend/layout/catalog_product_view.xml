@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
@@ -10,11 +10,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <css src="Saurabh_Preorder::css/preorder.css"/>
+        <css src="Saurabhg_Preorder::css/preorder.css"/>
     </head>
     <body>
         <referenceContainer name="content">
-            <block class="Saurabh\Preorder\Block\Product\View" name="saurabh.preorder.product" after="-"/>
+            <block class="Saurabhg\Preorder\Block\Product\View" name="saurabh.preorder.product" after="-"/>
         </referenceContainer>
     </body>
 </page>

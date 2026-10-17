@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Saurabh_Preorder
+ * Saurabhg_Preorder
  *
  * @copyright Copyright (C) 2026 Saurabh Gupta
  * @license   GPL-3.0-or-later
@@ -9,7 +9,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Saurabh_Preorder">
+    <module name="Saurabhg_Preorder">
         <sequence>
             <module name="Magento_Catalog"/>
             <module name="Magento_CatalogInventory"/>
