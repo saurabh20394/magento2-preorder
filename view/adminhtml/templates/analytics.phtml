@@ -1,0 +1,141 @@
+<?php
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ *
+ * @var \Saurabh\Preorder\Block\Adminhtml\Analytics $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+$period = $block->getPeriod();
+$summary = $block->getSummary();
+$products = $block->getTopProducts();
+$customers = $block->getTopCustomers();
+$statuses = $block->getStatuses();
+?>
+<form class="saurabh-preorder-analytics__filter" method="get" action="<?= $escaper->escapeUrl($block->getFilterUrl()) ?>">
+    <div class="admin__field">
+        <label class="admin__field-label" for="saurabh-preorder-from"><?= $escaper->escapeHtml(__('From')) ?></label>
+        <input class="admin__control-text" type="date" id="saurabh-preorder-from" name="from"
+               value="<?= $escaper->escapeHtmlAttr($period['from']) ?>" required>
+    </div>
+    <div class="admin__field">
+        <label class="admin__field-label" for="saurabh-preorder-to"><?= $escaper->escapeHtml(__('To')) ?></label>
+        <input class="admin__control-text" type="date" id="saurabh-preorder-to" name="to"
+               value="<?= $escaper->escapeHtmlAttr($period['to']) ?>" required>
+    </div>
+    <button type="submit" class="action-secondary"><?= $escaper->escapeHtml(__('Show Statistics')) ?></button>
+    <a class="saurabh-preorder-analytics__config" href="<?= $escaper->escapeUrl($block->getConfigUrl()) ?>">
+        <?= $escaper->escapeHtml(__('Configure tracked order statuses')) ?>
+    </a>
+</form>
+
+<div class="saurabh-preorder-analytics__tiles">
+    <?php foreach ([
+        [__('Pre-Orders'), (int)($summary['orders'] ?? 0)],
+        [__('Pre-Ordered Items'), $block->formatQty($summary['items_qty'] ?? 0)],
+        [__('Customers'), (int)($summary['customers'] ?? 0)],
+        [__('Pending Pre-Orders'), (int)($summary['pending_orders'] ?? 0)],
+        [__('Pending Amount'), $block->formatAmount($summary['pending_amount'] ?? 0)],
+        [__('Revenue Orders'), (int)($summary['revenue_orders'] ?? 0)],
+        [__('Revenue'), $block->formatAmount($summary['revenue'] ?? 0)],
+    ] as [$label, $value]): ?>
+        <div class="saurabh-preorder-analytics__tile">
+            <span class="saurabh-preorder-analytics__tile-label"><?= $escaper->escapeHtml($label) ?></span>
+            <span class="saurabh-preorder-analytics__tile-value"><?= $escaper->escapeHtml((string)$value) ?></span>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<section class="admin__page-section">
+    <div class="admin__page-section-title"><span class="title"><?= $escaper->escapeHtml(__('Products')) ?></span></div>
+    <div class="admin__table-wrapper">
+        <table class="data-table admin__table-primary">
+            <thead>
+            <tr>
+                <th scope="col"><?= $escaper->escapeHtml(__('Product')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('SKU')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Orders')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Qty')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Amount')) ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if (!$products): ?>
+                <tr><td colspan="5"><?= $escaper->escapeHtml(__('No pre-orders in this period.')) ?></td></tr>
+            <?php endif; ?>
+            <?php foreach ($products as $row): ?>
+                <tr>
+                    <td><?= $escaper->escapeHtml($row['name']) ?></td>
+                    <td><?= $escaper->escapeHtml($row['sku']) ?></td>
+                    <td><?= (int)$row['orders'] ?></td>
+                    <td><?= $escaper->escapeHtml($block->formatQty($row['qty'])) ?></td>
+                    <td><?= $escaper->escapeHtml($block->formatAmount($row['amount'])) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="admin__page-section">
+    <div class="admin__page-section-title"><span class="title"><?= $escaper->escapeHtml(__('Customers')) ?></span></div>
+    <div class="admin__table-wrapper">
+        <table class="data-table admin__table-primary">
+            <thead>
+            <tr>
+                <th scope="col"><?= $escaper->escapeHtml(__('Customer')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Email')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Orders')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Qty')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Amount')) ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if (!$customers): ?>
+                <tr><td colspan="5"><?= $escaper->escapeHtml(__('No pre-orders in this period.')) ?></td></tr>
+            <?php endif; ?>
+            <?php foreach ($customers as $row): ?>
+                <tr>
+                    <td>
+                        <?= $escaper->escapeHtml(trim((string)$row['name']) ?: __('Guest')) ?>
+                        <?php if ((int)$row['is_guest']): ?>
+                            <span class="saurabh-preorder-analytics__guest">(<?= $escaper->escapeHtml(__('guest')) ?>)</span>
+                        <?php endif; ?>
+                    </td>
+                    <td><?= $escaper->escapeHtml($row['email']) ?></td>
+                    <td><?= (int)$row['orders'] ?></td>
+                    <td><?= $escaper->escapeHtml($block->formatQty($row['qty'])) ?></td>
+                    <td><?= $escaper->escapeHtml($block->formatAmount($row['amount'])) ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="admin__page-section">
+    <div class="admin__page-section-title"><span class="title"><?= $escaper->escapeHtml(__('Pre-Orders by Status')) ?></span></div>
+    <div class="admin__table-wrapper">
+        <table class="data-table admin__table-primary">
+            <thead>
+            <tr>
+                <th scope="col"><?= $escaper->escapeHtml(__('Status')) ?></th>
+                <th scope="col"><?= $escaper->escapeHtml(__('Orders')) ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if (!$statuses): ?>
+                <tr><td colspan="2"><?= $escaper->escapeHtml(__('No pre-orders in this period.')) ?></td></tr>
+            <?php endif; ?>
+            <?php foreach ($statuses as $label => $count): ?>
+                <tr>
+                    <td><?= $escaper->escapeHtml($label) ?></td>
+                    <td><?= (int)$count ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>

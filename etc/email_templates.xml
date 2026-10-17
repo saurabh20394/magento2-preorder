@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="saurabh_preorder_notification_template" label="Pre-Order Release Notification"
+              file="release_notification.html" type="html" module="Saurabh_Preorder" area="frontend"/>
+</config>

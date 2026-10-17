@@ -1,0 +1,17 @@
+<?php
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ *
+ * @var \Saurabh\Preorder\Block\Order\Warning $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<section class="admin__page-section saurabh-preorder-admin-warning">
+    <div class="message message-warning" role="status">
+        <strong><?= $escaper->escapeHtml(__('Pre-Order')) ?>:</strong>
+        <?= nl2br($escaper->escapeHtml($block->getWarning())) ?>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+<?php
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ *
+ * @var \Saurabh\Preorder\Block\AbstractPreorder $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+<div class="saurabh-preorder-config" hidden
+     data-saurabh-preorder="<?= $escaper->escapeHtmlAttr($block->getJsConfigJson()) ?>"></div>
+<?php if ($block->isHyva()): ?>
+<script src="<?= $escaper->escapeUrl($block->getViewFileUrl('Saurabh_Preorder::js/preorder.js')) ?>" defer></script>
+<?php else: ?>
+<script type="text/x-magento-init">{"*": {"Saurabh_Preorder/js/preorder": {}}}</script>
+<?php endif; ?>

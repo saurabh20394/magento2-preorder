@@ -1,0 +1,32 @@
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<!--@subject {{trans "Your pre-ordered items from %store_name are released" store_name=$store.frontend_name}} @-->
+<!--@vars {
+"var order_data.customer_name":"Customer Name",
+"var order_data.increment_id":"Order Id",
+"var products":"Released Products",
+"var store.frontend_name":"Store Name"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "%name," name=$order_data.customer_name}}</p>
+            <p>
+                {{trans "Good news! The following items you pre-ordered in order #%increment_id have been released:" increment_id=$order_data.increment_id}}
+            </p>
+            <p><strong>{{var products}}</strong></p>
+            <p>{{trans "We will ship them to you as soon as possible."}}</p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

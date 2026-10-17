@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Catalog::catalog">
+                    <resource id="Magento_Catalog::catalog_inventory">
+                        <resource id="Magento_Catalog::products">
+                            <resource id="Saurabh_Preorder::release_notification" title="Send Pre-Order Release Notifications" sortOrder="100"/>
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magento_Reports::report">
+                    <resource id="Saurabh_Preorder::analytics" title="Pre Order Analytics" sortOrder="100"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Saurabh_Preorder::config" title="Saurabh Pre Order" sortOrder="100"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

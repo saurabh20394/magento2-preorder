@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="saurabh_preorder_notify">
+                <settings>
+                    <confirm>
+                        <message translate="true">Send pre-order release notifications to customers who pre-ordered the selected products? Products with Backorders = "Allow Pre-Orders" are skipped.</message>
+                        <title translate="true">Send Pre-Order Release Notification</title>
+                    </confirm>
+                    <url path="saurabh_preorder/product/massNotify"/>
+                    <type>saurabh_preorder_notify</type>
+                    <label translate="true">Send Pre-Order Release Notification</label>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>

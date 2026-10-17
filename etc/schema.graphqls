@@ -1,0 +1,23 @@
+# Saurabh_Preorder - read-only GraphQL support
+#
+# Copyright (C) 2026 Saurabh Gupta
+# License: GPL-3.0-or-later
+
+type SaurabhPreorderInfo @doc(description: "Pre-order information.") {
+    is_preorder: Boolean! @doc(description: "Whether the product / item is a pre-order.")
+    cart_button_label: String @doc(description: "Text of the add to cart button for pre-order products.")
+    note: String @doc(description: "Pre-order note with attribute variables replaced.")
+    release_date: String @doc(description: "Release date in Y-m-d format, when 'Use Release Date' is enabled.")
+}
+
+interface ProductInterface {
+    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information of the product.") @resolver(class: "Saurabh\\Preorder\\Model\\Resolver\\ProductPreorder")
+}
+
+interface CartItemInterface {
+    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information of the cart item.") @resolver(class: "Saurabh\\Preorder\\Model\\Resolver\\CartItemPreorder")
+}
+
+interface OrderItemInterface {
+    saurabh_preorder: SaurabhPreorderInfo @doc(description: "Pre-order information saved with the order item.") @resolver(class: "Saurabh\\Preorder\\Model\\Resolver\\OrderItemPreorder")
+}

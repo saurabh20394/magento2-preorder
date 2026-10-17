@@ -1,0 +1,25 @@
+{
+    "name": "saurabh/module-preorder",
+    "description": "Pre-order / backorder for out-of-stock and upcoming products (Luma + Hyva ready, GraphQL, REST).",
+    "type": "magento2-module",
+    "license": "GPL-3.0-or-later",
+    "version": "1.0.0",
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0||~8.4.0||~8.5.0",
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "magento/module-catalog-inventory": "*",
+        "magento/module-catalog-rule": "*",
+        "magento/module-sales-rule": "*",
+        "magento/module-quote": "*",
+        "magento/module-sales": "*"
+    },
+    "suggest": {
+        "magento/module-inventory-sales-api": "Uses MSI salable quantity when available",
+        "hyva-themes/magento2-default-theme": "Storefront works out of the box on Hyva themes"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {"Saurabh\\Preorder\\": ""}
+    }
+}

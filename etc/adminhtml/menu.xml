@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Saurabh_Preorder::analytics_group" title="Pre Order" translate="title" module="Saurabh_Preorder"
+             sortOrder="100" parent="Magento_Reports::report" resource="Saurabh_Preorder::analytics"/>
+        <add id="Saurabh_Preorder::analytics" title="Pre Order Analytics" translate="title" module="Saurabh_Preorder"
+             sortOrder="10" parent="Saurabh_Preorder::analytics_group" action="saurabh_preorder/analytics/index"
+             resource="Saurabh_Preorder::analytics"/>
+    </menu>
+</config>

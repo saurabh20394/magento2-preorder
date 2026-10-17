@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Backorders = "Allow Pre-Orders" (value 3) -->
+    <type name="Magento\CatalogInventory\Model\Source\Backorders">
+        <plugin name="saurabh_preorder_option" type="Saurabh\Preorder\Plugin\CatalogInventory\BackordersSourcePlugin"/>
+    </type>
+    <type name="Magento\CatalogInventory\Model\Spi\StockStateProviderInterface">
+        <plugin name="saurabh_preorder_check_qty" type="Saurabh\Preorder\Plugin\CatalogInventory\StockStateProviderPlugin"/>
+    </type>
+
+    <!-- pre-order note in cart, mini cart and checkout summary -->
+    <type name="Magento\Catalog\Helper\Product\Configuration">
+        <plugin name="saurabh_preorder_item_note" type="Saurabh\Preorder\Plugin\Catalog\ProductConfigurationPlugin"/>
+    </type>
+
+    <!-- save pre-order flag and note on the order item -->
+    <type name="Magento\Quote\Model\Quote\Item\ToOrderItem">
+        <plugin name="saurabh_preorder_order_item" type="Saurabh\Preorder\Plugin\Quote\ToOrderItemPlugin"/>
+    </type>
+
+    <!-- customer account and transactional emails -->
+    <type name="Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer">
+        <plugin name="saurabh_preorder_item_options" type="Saurabh\Preorder\Plugin\Sales\FrontendItemOptionsPlugin"/>
+    </type>
+    <type name="Magento\Sales\Block\Order\Email\Items\Order\DefaultOrder">
+        <plugin name="saurabh_preorder_item_options" type="Saurabh\Preorder\Plugin\Sales\EmailItemOptionsPlugin"/>
+    </type>
+    <type name="Magento\Sales\Block\Order\Email\Items\DefaultItems">
+        <plugin name="saurabh_preorder_item_options" type="Saurabh\Preorder\Plugin\Sales\EmailItemOptionsPlugin"/>
+    </type>
+    <type name="Magento\Sales\Block\Order\Email\Items">
+        <plugin name="saurabh_preorder_order_warning" type="Saurabh\Preorder\Plugin\Sales\EmailItemsWarningPlugin"/>
+    </type>
+
+    <!-- "Pre Order" column in Sales > Orders grid -->
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="saurabh_is_preorder" xsi:type="string">sales_order.saurabh_is_preorder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

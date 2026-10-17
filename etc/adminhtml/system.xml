@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="saurabh" translate="label" sortOrder="300">
+            <label>Saurabh Extensions</label>
+        </tab>
+        <section id="saurabh_preorder" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Pre Order</label>
+            <tab>saurabh</tab>
+            <resource>Saurabh_Preorder::config</resource>
+
+            <group id="general" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <comment><![CDATA[The extension is based on the native Magento backorders functionality, so it affects only products with Stock Status = <strong>In Stock</strong>. Enable pre-orders per product in Advanced Inventory &rarr; Backorders &rarr; <strong>Allow Pre-Orders</strong>.]]></comment>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Pre Orders</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="allow_zero_qty" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Allow Pre Orders for Products with Zero and Below Zero Qty</label>
+                    <comment>If set to "No", pre-orders are possible only while the product quantity is 1 or higher.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="disable_above_zero" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Disable Pre Order for Items with Qty Above Zero</label>
+                    <comment>If "Yes", pre-order takes effect only for products with quantity 0 or lower.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="allow_mixed_cart" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Mixed Carts</label>
+                    <comment>If "No", customers can't add both regular and pre-order products to the same cart.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="pending_statuses" translate="label comment" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Pending Orders Statuses (Analytics)</label>
+                    <comment>Orders in these statuses are counted as pending pre-orders on the Pre Order Analytics page.</comment>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\OrderStatus</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="revenue_statuses" translate="label comment" type="multiselect" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Revenue Orders Statuses (Analytics)</label>
+                    <comment>Orders in these statuses are counted as revenue on the Pre Order Analytics page.</comment>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\OrderStatus</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+
+            <group id="display" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Display Options</label>
+                <field id="cart_label" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Add to Cart Button Text</label>
+                    <comment>Replaces the "Add to Cart" text on category and product pages for pre-order products.</comment>
+                </field>
+                <field id="note" translate="label comment" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Pre Order Note</label>
+                    <comment><![CDATA[You can use product attributes as {variables}, e.g. {name}, {sku}, {release_date}.]]></comment>
+                </field>
+                <field id="note_selector" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pre-Order Note Output Place</label>
+                    <comment>Any valid CSS selector(s), comma separated. The note is inserted after the first element found, e.g. ".product-info-stock-sku, .stock, .availability".</comment>
+                </field>
+                <field id="assign_status" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Assign Pre-Order Status</label>
+                    <comment>Orders with pre-order products are moved to "Pre-Order Pending" / "Pre-Order Processing" instead of the default status of the corresponding state, and returned back once the order no longer qualifies as a pre-order. Works with default Magento statuses only.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_on_category" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Pre-Order Note on Category Pages</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="order_warning" translate="label comment" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pre-Order Warning in Order</label>
+                    <comment>Displayed with the order information (customer account, admin order view, order emails).</comment>
+                </field>
+                <field id="cart_warning" translate="label comment" type="textarea" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pre-Order Warning in Shopping Cart</label>
+                    <comment><![CDATA[Shown when there is not enough quantity of the ordered product. Use '%1$s' (product name) and '%2$s' (pre-ordered product qty).]]></comment>
+                </field>
+                <field id="below_zero_warning" translate="label comment" type="textarea" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pre-Order Warning for Below Zero Qty</label>
+                    <comment><![CDATA[Shown when there is not enough quantity and pre-orders are not allowed for zero and below zero qty. Use '%1$s' (product name) and '%2$s' (available product qty).]]></comment>
+                </field>
+            </group>
+
+            <group id="release_date" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Release Date</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Release Date</label>
+                    <comment><![CDATA[Allows using the {release_date} variable in Pre-Order Notes.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="attribute" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Release Date Attribute</label>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\DateAttribute</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="format" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Release Date Format</label>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\DateFormat</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="change_backorders" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Change Product Backorders Value on Release Date</label>
+                    <comment>Processed daily by cron for products whose release date has come.</comment>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\ReleaseBackorders</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+                <field id="note_state" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pre-Order Note State on Release Date</label>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\NoteState</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
+            </group>
+
+            <group id="additional" translate="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Additional Options</label>
+                <field id="detect_complex" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Detect Complex Products Which Consist only of Pre-Order Components</label>
+                    <comment>Configurable, bundle and grouped products whose components are all pre-order show the pre-order note before an option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_warning" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Automatically Add Warning to Transactional Emails</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <group id="notification" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Pre-Order Release Notification</label>
+                <field id="order_statuses" translate="label comment" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order Status</label>
+                    <comment>Notifications are sent only for orders in the chosen statuses. Send them from Catalog &gt; Products &gt; Actions &gt; Send Pre-Order Release Notification.</comment>
+                    <source_model>Saurabh\Preorder\Model\Config\Source\OrderStatus</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="template" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Notification Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="sender" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

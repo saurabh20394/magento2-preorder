@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Saurabh_Preorder
+ *
+ * @copyright Copyright (C) 2026 Saurabh Gupta
+ * @license   GPL-3.0-or-later
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <saurabh_preorder>
+            <general>
+                <enabled>1</enabled>
+                <allow_zero_qty>1</allow_zero_qty>
+                <disable_above_zero>0</disable_above_zero>
+                <allow_mixed_cart>1</allow_mixed_cart>
+                <pending_statuses>pending,preorder_pending,processing,preorder_processing</pending_statuses>
+                <revenue_statuses>complete</revenue_statuses>
+            </general>
+            <display>
+                <cart_label>Pre-Order</cart_label>
+                <note>This item is available for pre-order.</note>
+                <note_selector>.product-info-stock-sku, .stock, .availability</note_selector>
+                <assign_status>0</assign_status>
+                <show_on_category>1</show_on_category>
+                <order_warning>This order contains pre-order items. They will be shipped as soon as they become available.</order_warning>
+                <cart_warning><![CDATA[We don't have as many "%1$s" as you requested, the remaining %2$s will be pre-ordered.]]></cart_warning>
+                <below_zero_warning><![CDATA[We don't have as many "%1$s" as you requested. Only %2$s available for pre-order.]]></below_zero_warning>
+            </display>
+            <release_date>
+                <enabled>1</enabled>
+                <attribute>saurabh_preorder_release_date</attribute>
+                <format>m/d/Y</format>
+                <change_backorders>-1</change_backorders>
+                <note_state>hidden</note_state>
+            </release_date>
+            <additional>
+                <detect_complex>1</detect_complex>
+                <email_warning>1</email_warning>
+            </additional>
+            <notification>
+                <order_statuses>pending,preorder_pending,processing,preorder_processing</order_statuses>
+                <template>saurabh_preorder_notification_template</template>
+                <sender>general</sender>
+            </notification>
+        </saurabh_preorder>
+    </default>
+</config>

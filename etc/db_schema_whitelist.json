@@ -1,0 +1,22 @@
+{
+    "sales_order": {
+        "column": {
+            "saurabh_is_preorder": true,
+            "saurabh_preorder_status_off": true
+        }
+    },
+    "sales_order_grid": {
+        "column": {
+            "saurabh_is_preorder": true
+        },
+        "index": {
+            "SALES_ORDER_GRID_SAURABH_IS_PREORDER": true
+        }
+    },
+    "sales_order_item": {
+        "column": {
+            "saurabh_preorder": true,
+            "saurabh_preorder_note": true
+        }
+    }
+}
